@@ -1,0 +1,15 @@
+.input_query {
+  outline: none;
+  border: none;
+  background: transparent;
+  flex: 1;
+  padding: 0.4rem;
+}
+
+.input_container {
+  display: flex;
+  align-items: center;
+  border: 2px solid rgb(230, 230, 230);
+  border-radius: 0.4rem;
+  cursor: pointer;
+}

@@ -1,0 +1,11 @@
+.filters_container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter_container {
+  margin: 0.2rem 1rem;
+  min-width: 250px;
+}

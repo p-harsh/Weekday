@@ -1,0 +1,88 @@
+.multiselect_container {
+  position: relative;
+}
+
+.selected_tile {
+  display: flex;
+  align-items: center;
+  border: none;
+  gap: 0.2rem;
+  margin-inline: 0.15rem;
+  justify-content: center;
+  padding: 0;
+
+  & svg {
+    border-left: 1px solid rgb(212, 212, 212);
+  }
+
+  & svg:hover {
+    background: rgb(240, 204, 204);
+    cursor: pointer;
+    fill: red;
+  }
+}
+
+.selected_tile_label {
+  padding: 0.1rem 0.2rem;
+}
+
+.selected_tile_container {
+  display: flex;
+  align-items: center;
+}
+
+.input_container {
+  display: flex;
+  align-items: center;
+  border: 2px solid rgb(230, 230, 230);
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.search_input {
+  outline: none;
+  border: none;
+  background: transparent;
+  flex: 1;
+  padding: 0.4rem;
+}
+
+.dropdown_arrow {
+  border-left: 2px solid rgb(233, 233, 233);
+  padding-inline: 0.1rem;
+}
+
+.dropdown_container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  background: white;
+  position: absolute;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px 0px;
+  z-index: 99;
+}
+
+.empty_options {
+  padding: 0.4rem 1rem;
+  border-bottom: 1px solid rgb(232, 232, 232);
+  text-align: center;
+}
+
+.dropdown_tile {
+  outline: none;
+  border: none;
+  background: none;
+  padding: 0.4rem 1rem;
+  border-bottom: 1px solid rgb(232, 232, 232);
+  cursor: pointer;
+  text-align: start;
+}
+
+.to_be_selcted_tile {
+  background: rgb(186, 219, 243);
+}
+
+.focus_input_container {
+  border: 2px solid rgb(78, 159, 191);
+}
