@@ -6,11 +6,12 @@ const useFetch = ({ url = "", method = "" }) => {
   const [data, setData] = useState({});
 
   const fetchData = useCallback(
-    async ({ payload = {}, handleUpdateJdData = () => {} }) => {
+    async ({ payload = {}, handleUpdateJdData = () => {}, signal = null }) => {
       setLoading(true);
 
       try {
         const res = await fetch(url, {
+          signal,
           method,
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),

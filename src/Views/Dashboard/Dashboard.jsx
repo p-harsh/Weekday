@@ -38,11 +38,18 @@ const Dashboard = () => {
   }, []);
 
   useEffect(() => {
+    // using abort signal to abort the fetch request if component unmount
+    const controller = new AbortController();
+    const signal = controller.signal;
+
     // depending on current page, change the offset to fetch required data
     fetchJobsList({
       payload: { limit: JOB_LIST_LIMIT, offset: JOB_LIST_LIMIT * (page - 1) },
       handleUpdateJdData,
+      signal,
     });
+
+    return () => controller.abort();
   }, [page, fetchJobsList, handleUpdateJdData]);
 
   // check if current page is last page, depending on total count of jobs
@@ -51,6 +58,7 @@ const Dashboard = () => {
     [page, totalCount]
   );
 
+  // infinite scroller, which uses height of window and height of the component to fetch data
   const handleScroll = useCallback(() => {
     if (
       window.innerHeight + document.documentElement.scrollTop >
